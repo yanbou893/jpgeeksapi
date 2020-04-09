@@ -34,7 +34,7 @@ class V1::UsersController < ApplicationController
     def update
     
       user = User.find_by(id: params[:id])
-      user.update(name:params[:name],photo:params[:photo],intro:params[:intro])
+      user.update(name:params[:displayName],photo:params[:photoURL],intro:params[:intro])
 
     end
 
@@ -48,6 +48,6 @@ class V1::UsersController < ApplicationController
 
     private
       def user_params
-        params.require(:user).permit(:email, :uid, :name, :photo,:intro)
+        params.require(:user).permit(:email, :uid, :displayName, :photoURL,:intro)
     end
 end

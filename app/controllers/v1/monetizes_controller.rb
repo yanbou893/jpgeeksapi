@@ -40,6 +40,6 @@ class V1::MonetizesController < ApplicationController
 
     private
       def monetize_params
-        params.require(:monetize).permit(:app_id, :date,:money)
+        params.require(:monetize).permit(:user_id,:app_id, :date,:money)
     end
   end

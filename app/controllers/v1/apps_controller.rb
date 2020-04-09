@@ -1,7 +1,7 @@
 class V1::AppsController < ApplicationController
     def index
-      if params[:id] 
-        @app = App.where(user_id: params[:id])
+      if params[:user_id] 
+        @app = App.where(user_id: params[:user_id])
         render json: @app
       elsif params[:appid]
         @app = App.find_by(id: params[:appid])
